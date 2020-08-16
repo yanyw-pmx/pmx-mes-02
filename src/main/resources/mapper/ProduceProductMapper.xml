@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Boot.mapper.ProduceProductMapper">
+  <resultMap id="BaseResultMap" type="Boot.domain.ProduceProduct">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_num" jdbcType="VARCHAR" property="productNum" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, product_num, product_name, picture_url
+  </sql>
+
+  <select id="findAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    *
+    from produce_product
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from produce_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from produce_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Boot.domain.ProduceProduct">
+    insert into produce_product (id, product_num, product_name, 
+      picture_url)
+    values (#{id,jdbcType=BIGINT}, #{productNum,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
+      #{pictureUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="Boot.domain.ProduceProduct">
+    insert into produce_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productNum != null">
+        product_num,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="pictureUrl != null">
+        picture_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productNum != null">
+        #{productNum,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureUrl != null">
+        #{pictureUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Boot.domain.ProduceProduct">
+    update produce_product
+    <set>
+      <if test="productNum != null">
+        product_num = #{productNum,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureUrl != null">
+        picture_url = #{pictureUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Boot.domain.ProduceProduct">
+    update produce_product
+    set product_num = #{productNum,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      picture_url = #{pictureUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
