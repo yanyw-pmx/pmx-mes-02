@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @Controller
-public class MybatisController {
+@RequestMapping("/springBoot")
+public class SpringBoot {
 
     @Autowired
     private UserMapper userMapper;
@@ -18,9 +20,9 @@ public class MybatisController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @RequestMapping("/queryUser")
+    @RequestMapping("/finaAll")
     @ResponseBody
-    public List<User> queryUser() {
+    public List<User> finaAll() {
 //        User user = (User) redisTemplate.opsForValue().get("user");
 //
 //        if(user==null){
