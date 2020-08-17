@@ -1,7 +1,13 @@
+Boot\system\domain\SystemUserRole.class
+Boot\system\mapper\SystemUserRoleMapper.class
 Boot\product\mapper\UserMapper.class
+Boot\system\domain\SystemRoles.class
+Boot\system\domain\SystemWorkers.class
 Boot\MySpringBootApplication.class
 Boot\product\domain\ProduceProduct.class
+Boot\system\mapper\SystemWorkersMapper.class
 Boot\product\mapper\ProduceProductMapper.class
+Boot\system\mapper\SystemRolesMapper.class
 Boot\product\domain\User.class
 Boot\product\service\Impl\ProduceProductServiceImpl.class
 Boot\product\controller\ProduceProductController.class

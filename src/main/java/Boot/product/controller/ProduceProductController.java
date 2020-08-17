@@ -21,8 +21,8 @@ public class ProduceProductController {
     @Autowired
     private ProduceProductServiceImpl produceProductService;
 
-    @RequestMapping("/finaAll")
-    List<ProduceProduct> finaAll() {
+    @RequestMapping("/findAll")
+    List<ProduceProduct> findAll() {
         List<ProduceProduct> all = produceProductService.findAll();
         PageInfo pageInfo = new PageInfo<>(all);
         System.out.println(all);
