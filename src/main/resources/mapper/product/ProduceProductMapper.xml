@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Boot.mapper.ProduceProductMapper">
-  <resultMap id="BaseResultMap" type="Boot.domain.ProduceProduct">
+<mapper namespace="Boot.product.mapper.ProduceProductMapper">
+  <resultMap id="BaseResultMap" type="Boot.product.domain.ProduceProduct">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="product_num" jdbcType="VARCHAR" property="productNum" />
     <result column="product_name" jdbcType="VARCHAR" property="productName" />
@@ -27,13 +27,13 @@
     delete from produce_product
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="Boot.domain.ProduceProduct">
+  <insert id="insert" parameterType="Boot.product.domain.ProduceProduct">
     insert into produce_product (id, product_num, product_name, 
       picture_url)
     values (#{id,jdbcType=BIGINT}, #{productNum,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
       #{pictureUrl,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="Boot.domain.ProduceProduct">
+  <insert id="insertSelective" parameterType="Boot.product.domain.ProduceProduct">
     insert into produce_product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="Boot.domain.ProduceProduct">
+  <update id="updateByPrimaryKeySelective" parameterType="Boot.product.domain.ProduceProduct">
     update produce_product
     <set>
       <if test="productNum != null">
@@ -79,7 +79,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="Boot.domain.ProduceProduct">
+  <update id="updateByPrimaryKey" parameterType="Boot.product.domain.ProduceProduct">
     update produce_product
     set product_num = #{productNum,jdbcType=VARCHAR},
       product_name = #{productName,jdbcType=VARCHAR},

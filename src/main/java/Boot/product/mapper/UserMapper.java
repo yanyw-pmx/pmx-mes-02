@@ -1,6 +1,6 @@
-package Boot.mapper;
+package Boot.product.mapper;
 
-import Boot.domain.User;
+import Boot.product.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 

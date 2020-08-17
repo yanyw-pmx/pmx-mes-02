@@ -24,13 +24,13 @@
                 password="root"/>
 
         <!-- 生成POJO对象，并将类放到com.songguoliang.springboot.entity包下 -->
-        <javaModelGenerator targetPackage="Boot.domain" targetProject="src/main/java"></javaModelGenerator>
+        <javaModelGenerator targetPackage="Boot.product.domain" targetProject="src/main/java"></javaModelGenerator>
         <!-- 生成mapper xml文件，并放到resources下的mapper文件夹下 -->
-        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources"></sqlMapGenerator>
+        <sqlMapGenerator targetPackage="product.mapper"  targetProject="src/main/resources"></sqlMapGenerator>
 
 
         <!-- 生成mapper xml对应dao接口，放到com.songguoliang.springboot.mapper包下-->
-        <javaClientGenerator targetPackage="Boot.mapper" targetProject="src/main/java" type="XMLMAPPER"></javaClientGenerator>
+        <javaClientGenerator targetPackage="Boot.product.mapper" targetProject="src/main/java" type="XMLMAPPER"></javaClientGenerator>
 
         <!-- table标签可以有多个，至少一个，tableName指定表名，可以使用_和%通配符 -->
         <!-- 对应sql表，tablename要对应，关掉全部example功能，需要生成其他表再加一个table标签-->

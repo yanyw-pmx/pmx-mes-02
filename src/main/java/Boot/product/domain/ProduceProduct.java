@@ -1,4 +1,4 @@
-package Boot.domain;
+package Boot.product.domain;
 
 import lombok.Data;
 
